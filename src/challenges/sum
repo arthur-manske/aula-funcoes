@@ -1,0 +1,8 @@
+#!/usr/bin/node
+
+const sum = (x, y) => {
+    const sum = x + y;
+    console.log(sum);
+};
+
+sum(12, 45);

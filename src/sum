@@ -1,0 +1,23 @@
+#!/usr/bin/node
+
+let number1, number2;
+
+function die()
+{	
+	process.stderr.write(`Usage: ${process.argv[1]} <number1> <number2>\n`); 
+	process.exit(1);
+}
+
+function sum(x, y)
+{
+	return (x + y);
+}
+
+if (process.argv.length != 4) die();
+
+number1 = Number(process.argv[2]);
+number2 = Number(process.argv[3]);
+
+if (isNaN(number1) || isNaN(number2)) die(); 
+
+console.log(`${sum(number1, number2)}`);

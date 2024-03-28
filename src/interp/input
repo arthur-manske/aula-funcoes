@@ -1,0 +1,17 @@
+#!/usr/bin/node
+
+let textoDoUsuario = prompt("Insira um texto");
+
+const outraFuncao = function(texto) {
+	return texto.toLowerCase().includes("cenoura") /* a) returns if a string contains the substring "cenoura" without considering case (because any case is converted to lowercase) */
+}
+
+const resposta = outraFuncao(textoDoUsuario) 
+console.log(resposta)
+
+/*
+	b)
+		I. "Eu gosto de cenoura" would return true;
+		II. "CENOURA é bom pra vista" would return true;
+		III. "Cenouras crescrem na terra" would return true.
+*/

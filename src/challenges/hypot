@@ -1,0 +1,29 @@
+#!/usr/bin/node
+
+const libReadline = require('readline')
+const rl = libReadline.createInterface({input: process.stdin, output: process.stdout});
+
+let c;
+
+function die()
+{
+	process.stderr.write(`${process.argv[1]}: Provide a valid number.\n`); 
+	process.exit(1);
+}
+
+function hypot(a, b)
+{
+	let c = ((a * a) + (b * b));
+	return Math.sqrt(c);
+}
+
+rl.question("Type the value of a: ", (a) => {
+	if (isNaN((a = Number(a)))) die();
+	rl.question("Type the value of b: ", (b) => {
+		if (isNaN((b = Number(b)))) die();
+		c = hypot(a, b); 
+		
+		console.log(c);
+		rl.close();
+	});
+});

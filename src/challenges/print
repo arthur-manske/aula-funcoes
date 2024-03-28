@@ -1,0 +1,9 @@
+#!/usr/bin/node
+
+let toPrint = "Olá, mundo!";
+
+const print = (param) => {
+	console.log(param)
+};
+
+print(toPrint);

@@ -1,0 +1,10 @@
+#!/usr/bin/node
+
+function stringInformations(s)
+{
+	console.log(`${s.length}\t${s.toUpperCase()}`);
+}
+
+console.log(`Length\tUpper case argument`); 
+
+for (let i = 0; i < process.argv.length; ++i) stringInformations(process.argv[i]);

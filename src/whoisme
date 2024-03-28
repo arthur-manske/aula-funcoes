@@ -1,0 +1,13 @@
+#!/usr/bin/node 
+/* This first line removes the necessity of typing `node` before the command on any UNIX®-like OS */
+
+let string;
+
+/* Ken & Ritchie are not wrong... Even in javascript! */
+function printInfo(name, age, city, work)
+{
+	return (`Eu sou ${name}, tenho ${age} anos, moro em ${city} e sou ${work}.`);
+}
+
+string = printInfo("Arthur de S. Manske", 16, "Sapucaia do Sul", "estudante ('aka' vagabundo)");
+console.log(string);

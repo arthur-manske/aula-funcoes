@@ -1,0 +1,37 @@
+#!/usr/bin/node
+
+function die()
+{	
+	process.stderr.write(`Usage: ${process.argv[1]} <number>...`); 
+	process.exit(1);
+}
+
+function isEven(x)
+{
+	/* in Javascript, unfortunally we don't have implicit bool conversion */
+	return ((x % 2) == 0);
+}
+
+let i;
+
+/* skips argv */
+for (i = 2; i < process.argv.length; ++i)
+{
+	let argvToNumber = Number(process.argv[i]); 
+	if (isNaN(argvToNumber))
+		die();
+
+	if (isEven(argvToNumber)) {
+		process.stdout.write(`${process.argv[i]}: even;\t`); 
+	} else {
+		process.stdout.write(`${process.argv[i]}: not even;\t`); 
+	}
+}
+
+if (i < 3) {
+	die();
+} else {
+	process.stdout.write(`\n`);
+	process.exit(0);
+}
+

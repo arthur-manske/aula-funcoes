@@ -1,0 +1,43 @@
+#!/usr/bin/node
+
+const libReadline = require('readline')
+const rl = libReadline.createInterface({input: process.stdin, output: process.stdout});
+
+function die()
+{
+	process.stderr.write(`${process.argv[1]}: Provide a valid number.\n`); 
+	process.exit(1);
+}
+
+function mul(x, y)
+{
+	return (x * y); 
+}
+
+function div(x, y)
+{
+	return (x / y); 
+}
+
+function minus(x, y)
+{
+	return (x * y); 
+}
+
+function plus(x, y)
+{
+	return (x + y); 
+}
+
+rl.question("Type a number: ", (x) => {
+	if (isNaN((x = Number(x)))) die(); 
+	rl.question("Type another number: ", (y) => {
+		if (isNaN((y = Number(y)))) die();
+		/* longer numbers would make a unproportional output, but 
+			it doesn't make sense to handle it on a simple example.
+		*/
+		console.log(`Sum\tDiff\tMul\tDiv`);
+		console.log(`${plus(x, y)}\t${minus(x, y)}\t${mul(x, y)}\t${div(x, y)}`)
+		rl.close(); 
+	});
+});
